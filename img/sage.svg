@@ -1,0 +1,9 @@
+<svg id="SAGE_Image" data-name="SAGE Image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 70 70">
+  <title>sage</title>
+  <rect width="70" height="70" fill="#f63c3c"/>
+  <g style="isolation: isolate">
+    <text transform="translate(20.83 30.4)" font-size="30.3" fill="#fcfcfc" font-family="Teko" letter-spacing="3" style="isolation: isolate">SA</text>
+    <text transform="translate(20.83 52.4)" font-size="30.3" fill="#fcfcfc" font-family="Teko" letter-spacing="3" style="isolation: isolate">GE</text>
+  </g>
+  <rect x="22.26" y="55" width="24.7" height="2" fill="#fcfcfc"/>
+</svg>
