@@ -443,7 +443,9 @@ footer small {
 /*----------------------------------------
 	MEDIA QUERIES
 ----------------------------------------*/
+
 /* < 768 */
+
 @media screen and (max-width: 768px) {
 	header.header {
 		display: hidden;
@@ -456,24 +458,6 @@ footer small {
 	nav ul {
 		display: none;
 	}
-
-/*
-
-	.hamburger{
-	float: right;
-	width: 70px;
-	height: 70px;
-	padding-top: 29px;
-	}
-
-	.iconBar{
-	display: block;
-	margin: 0 auto;
-	width: 24px;
-	height: 2px;
-	background: #f63c3c;
-	margin-bottom: 4px;
-	}*/
 
 	li.active h1 {
 		font-size: 8rem;
@@ -538,17 +522,21 @@ footer small {
 	}
 
 	label:after:hover {
-		color: #fff;
+		color: #000;
 		background-color: #f63c3c;
 
 	}
 
 	[type="checkbox"]:checked ~ ul {
   		display: block;
-  		z-index: 9999;
+  		text-align: center;
+  		z-index: 1;
   		position: absolute;
 		right: 20px;
 		left: 20px;
+		top: 70px;
+		-webkit-transition: all 0.3s ease-in-out 0s;
+    	transition: all 0.3s ease-in-out 0s;
 	}
 
 	nav a {
@@ -560,7 +548,7 @@ footer small {
   		float: none;
   		width: 100%;
   		text-align: left;
-  		background: #222;
+  		background: #fff;
 	    text-indent: 20px;
 	}
 
