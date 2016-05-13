@@ -2,19 +2,25 @@
 	box-sizing: border-box;
 }
 
-/* body, headers, anchor tag */
+/* BODY, HEADERS, ANCHOR TAG */
 
 html,
 body {
 	height: 100%;
+	font-size: 62.5%; 
 }
 
 body {
 	font-family: "Titillium Web", Helvetica, Arial, Sans-serif;
 	text-align: center;
-	font-size: 16px;
+	font-size: 1.6rem;
 	color: #000;
 	font-weight: 300;
+}
+
+header {
+	height: 70px;
+	z-index: 1;
 }
 
 h1, 
@@ -28,20 +34,20 @@ a {
 }
 
 h1 {
-	font-size: 120px;
-	letter-spacing: 10px;
+	font-size: 12.0rem;
+	letter-spacing: 1rem;
 	font-weight: 300;
 	color: #fff;
 }
 
 h2{
-	font-size: 30px;	
-	letter-spacing: 2px;
+	font-size: 3rem;	
+	letter-spacing: .2rem;
 }
 
 h3{
-	font-size: 20px;
-	letter-spacing: 2px;
+	font-size: 2.0\\rem;
+	letter-spacing: .2rem;
 	margin-bottom: 16px;
 }
 
@@ -50,7 +56,7 @@ a {
 	color: #000;
 }
 
-/* clearfix */
+/* CLEARFIX */
 
 .clearfix:before, .clearfix:after{
 	content: "";
@@ -61,14 +67,18 @@ a {
 }
 
 .logo {
+	background: url("../img/sage.svg") left center/99% no-repeat;
 	float: left;
 	width: 70px;
+	height: 70px;
+	margin-left: 1.25%;
 }
 
-/* navigation */
+/* NAVIGATION */
 
 nav {
 	float: right;
+	max-width: 55%;
 }
 
 nav ul li,
@@ -78,13 +88,15 @@ aside ul li {
 
 nav ul li a {
 	font-family: "Titillium Web", Helvetica, Arial, Sans-serif;
-	font-size: 16px;
+	font-size: 1.6rem;
 	text-transform: capitalize;
 	display: block;
 	text-decoration: none;
 	color: #cccccc;
 	margin-right: 40px;
 	padding: 26px 0;
+	position: relative;
+	transition: all 0.3s ease-out;
 }
 
 nav ul li a:hover,
@@ -93,39 +105,71 @@ nav ul li a.active {
 	border-bottom: 3px solid #f63c3c;
 }
 
-/* hero */
-
-.hero {
-	background: url(../img/projects/background-hero.jpg) no-repeat center 70px;
-	background-size: cover;
-	background-color: #fff;
-	height: 1083px; 
+nav ul li a:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #f63c3c;
+  visibility: hidden;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
 }
 
-main section ul li h1 {
-	font-size: 120px;
-    font-weight: 300;
-    text-transform: uppercase;
-    letter-spacing: 10px;
-    color: #ffffff;
-    margin: 295px 0 30px;
+nav ul li > a:hover:before {
+  visibility: visible;
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+}
+
+[type="checkbox"], label {
+	  display: none;
+}
+
+/* HERO */
+
+.hero {
+	position: relative;
+	height: 1011px; 
+	background: url(../img/projects/background-hero.jpg) no-repeat center -70px;
+	background-color: #fff;
+}
+
+.title {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	-moz-transform: translate(-50%, -50%);
+	-o-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	width: 100%;
+}
+
+li.active h1 {
+	line-height: 14.25rem;
 }
 
 li h1 ~ p {
-	font-size: 22px;
+	font-size: 2.2rem;
 	font-weight: 300;
 	color: #fff;
-    width: 60%;
-    margin: 0 auto 65px;
-    letter-spacing: 2px;
-    line-height: 25px;
+    max-width: 75%;
+    margin: 10px auto 6%;
+    line-height: 3rem;
 }
 
 li.active a {
-	font-size: 20px;
-	letter-spacing: 3px;
+	font-size: 2.0rem;
+	letter-spacing: .3rem;
 	background-color: #fff;
-	padding: 18px 55px; 
+	padding: 18px 5.5%; 
+	-webkit-transition: all .3s ease-in-out 0s;
+    transition: all .3s ease-in-out 0s;
 }
 
 li.active a:hover {
@@ -134,43 +178,57 @@ li.active a:hover {
 }
 
 section.hero nav {
-	padding-top: 233px;
-	margin: 0 auto;
-	float: none;
+	position: absolute;
+	bottom: 4%;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	-moz-transform: translate(-50%, -50%);
+	-o-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	width: 100%;
 }
 
 .hero-nav li {
-	width: 40px;
+	width: 7%;
 	height: 4px;
 	display: inline-block;
 	background-color: rgba(255,255,255, .4);
-	margin: 0 5px;
+	margin: 0 1%;
 }
 
 .hero-nav li.active {
 	background-color: #fff;
 }
 
-/* My projects section */
+/* MY PROJECTS SECTION */
 
-main section.clearfix {
-	padding: 53px 10px 75px;
+section.clearfix {
+	padding-top: 50px;
 }
 
 section.clearfix h2 {
-	margin-bottom: 35px;
+	margin-bottom: 45px;
 }
 
 section.clearfix article h3 {
-	font-size: 20px;
+	font-size: 3rem;
 	font-weight: 400;
+	margin: 15px auto 5px;
+	letter-spacing: .5rem;
 }
 
 section article {
-	width: 50%;
+	width: 48%;
 	position: relative;
 	float: left;
-	padding: 10px;
+	margin-left: 1.33%;
+}
+
+section article:nth-of-type(2) {
+	width: 48%;
+	position: relative;
+	float: left;
+	margin: 0 1.33%;
 }
 
 main section ul li {
@@ -184,18 +242,22 @@ main section ul li.active {
 img {
 	width: 100%;
 	background-color: #000;
-	z-index: 0;
 }
 
+/* ARTICLES */
+
 article p {
-	font-size: 14px;
-	width: 45%;
-	margin: 0 auto;
+	font-size: 1.4rem;
+	width: 75%;
+	margin: 0 auto 30px;
+	line-height: 2rem;
+	color: #555555;
 }
 
 article figure {
 	width: 100%;
     height: 100%;
+    position: relative;
 }
 
 article figcaption {
@@ -205,20 +267,27 @@ article figcaption {
 	width: 100%;
 	height: 100%;
 	background-color: #f63c3c;
-	border: 5px solid #352d2f;
-	top: 4%;
-	left: 5%;
+	border: 4px solid #352d2f;
+	top: 0%;
+	left: 0%;
 	font-weight: 300;
 	text-align: center;
 	opacity: 0;
+
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
+}
+
+article figcaption:hover {
+	opacity: 100;
 }
 
 figcaption h4 {
 	display: block;
-	font-size: 24px;
+	font-size: 2.4rem;
 	color: #fff;
 	margin-top: 20%;
-	letter-spacing: 3px;
+	letter-spacing: .3rem;
 }
 
 article figcaption p {
@@ -227,13 +296,8 @@ article figcaption p {
 	margin-top: 8%;
 	text-transform: uppercase;
 	font-family: 'Teko', Helvetica, Arial, sans-serif;
-	letter-spacing: 2px;
+	letter-spacing: .2rem;
 }
-
-section.clearfix article h3 {
-	margin: 27px 19px;
-}
-
 
 time {
 	display: block;
@@ -244,44 +308,50 @@ figure {
 	position: relative;
 }
 
-article figcaption:hover {
-	opacity: 100;
+section.clearfix footer {
+	width: 100%;
+	height: 140px;
+	display: inline-block;
+	position: relative;
+	padding-top: 40px;
 }
 
 section.clearfix footer a {
-	font-size: 20px;
+	font-size: 2rem;
 	color: #f63c3c;
 	border-bottom: 4px solid #f63c3c;
 	margin-top: 50px;
-	letter-spacing: 2px;
-	display: inline-block;
+	letter-spacing: .5rem;
+
+	-webkit-transition: all .3s ease-in-out 0s;
+    transition: all .3s ease-in-out 0s;
 }
 
 section.clearfix footer a:hover {
-	color: #454545;
-	border-bottom: 4px solid #454545;
+	color: #30282a;
+	border-bottom: 4px solid #30282a;
 }
 
-/* showcase section */
+/* SHOWCASE SECTION */
 
 main section.showcase {
 	background-color: #f63c3c;
 	height: 240px;
 	color: #fff;
 	line-height: 35px;
-	padding-top: 60px;
+	padding: 60px 0 10px;
 }
 
 main section.showcase h1 {
-	font-size: 40px;
-	letter-spacing: 5px;
+	font-size: 4rem;
+	letter-spacing: .5rem;
 	font-weight: 300;
 }
 
 main section.showcase p {
 	font-family: 'Roboto', Arial, sans-serif; 
 	font-weight: 300;
-	font-size: 16px;
+	font-size: 1.6rem;
 	margin-bottom: 15px;
 }
 
@@ -290,9 +360,16 @@ section.showcase a {
     letter-spacing: 3px;
     padding: 15px 81px;
     background-color: #fff;
+    -webkit-transition: all 0.3s ease-in-out 0s;
+    transition: all 0.3s ease-in-out 0s;
 }
 
-/* social aside */
+section.showcase a:hover {
+	color: #fff;
+	background-color: #30282a;
+}
+
+/* SOCIAL ASIDE */
 
 aside h2, 
 aside h2 ~ p {
@@ -300,18 +377,17 @@ aside h2 ~ p {
 }
 
 aside h2 {
-	font-size: 40px;
-	margin: 20px 10px;
+	font-size: 4rem;
+	margin: 20px 1% 5px;
 }
 
 aside h2 ~ p {
-	font-size: 16px;
-	margin: 22px 0 60px 10px;
+	font-size: 1.6rem;
+	margin: 0 0 45px 1%;
 }
 
 main aside {
-	width: 100%;
-	padding: 62px 0 0;
+	padding: 40px 0 0;
 }
 
 aside ul {
@@ -322,17 +398,23 @@ aside ul li a {
 	display: block;
 	color: #fff;
 	background-color: #30282a;
-	padding: 53px 0px;
-	font-size: 30px;
+	padding: 15% 20%;
+	font-size: 3rem;
 	font-weight: 300;
-	letter-spacing: 5px;
+	letter-spacing: .5rem;
 	margin-bottom: 80px;
+	-webkit-transition: all 0.3s ease-in-out 0s;
+    transition: all 0.3s ease-in-out 0s;
+}
+
+aside ul li a:hover {
+	background-color: #f63c3c;
 }
 
 aside ul li {
 	display: inline-block;
-    margin: 9px;
-    width: 23%;
+    margin: 0 1.25%;
+    width: 22.5%;
     float: left;
 }
 
@@ -346,16 +428,163 @@ ul li a i.fa {
 	margin-bottom: 25px;
 }
 
-/* footer */
+/* FOOTER */
 
 body > footer {
-    display: block;
     text-align: left;
 }
 
 footer small {
 	font-size: 13px;
     color: #555555;
-    margin-left: 10px;
+    margin-left: 1%;
+}
+
+/*----------------------------------------
+	MEDIA QUERIES
+----------------------------------------*/
+/* < 768 */
+@media screen and (max-width: 768px) {
+	header.header {
+		display: hidden;
+	}
+
+	.logo {
+		min-width: 9.85%
+	}
+
+	nav ul {
+		display: none;
+	}
+
+/*
+
+	.hamburger{
+	float: right;
+	width: 70px;
+	height: 70px;
+	padding-top: 29px;
+	}
+
+	.iconBar{
+	display: block;
+	margin: 0 auto;
+	width: 24px;
+	height: 2px;
+	background: #f63c3c;
+	margin-bottom: 4px;
+	}*/
+
+	li.active h1 {
+		font-size: 8rem;
+		line-height: 8rem;
+	}
+
+	li h1 ~ p {
+		font-size: 2rem;
+		line-height: 2.5rem;
+	}
+
+	section article,
+	section article:nth-of-type(2) {
+		width: 90%;
+		margin: 5%;
+	}
+
+	main section.showcase p {
+		padding: 0 5%;
+    	line-height: 2.5rem;
+    	margin: 10px 0 20px;
+	}
+
+	aside h2, 
+	aside h2 ~ p {
+		text-align: center;
+	}
+
+	main section.showcase {
+		height: 300px;
+	}
+
+	aside ul li {
+		margin: 0 5%;
+    	width: 90%;
+	}
+
+	body > footer {
+		text-align: center;
+	}
+
+
+
+	label {
+		display: block;
+		width: 40px;
+		height: 40px;
+		cursor: pointer;
+		position: absolute;
+		right: 20px;
+		top: 20px;
+	}
+  
+	label:after {
+	  content:'';
+	  display: block;
+	  width: 24px;
+	  height: 2px;
+	  background: #f63c3c;
+	  margin: 7px 5px;
+	  box-shadow: 0px 8px 0px #f63c3c, 0px 16px 0px #f63c3c;
+	}
+
+	label:after:hover {
+		color: #fff;
+		background-color: #f63c3c;
+
+	}
+
+	[type="checkbox"]:checked ~ ul {
+  		display: block;
+  		z-index: 9999;
+  		position: absolute;
+		right: 20px;
+		left: 20px;
+	}
+
+	nav a {
+		  color: #777;
+	}
+
+	nav ul li {
+	    display: block;
+  		float: none;
+  		width: 100%;
+  		text-align: left;
+  		background: #222;
+	    text-indent: 20px;
+	}
+
+	nav > ul > li {
+  		margin-left: 0px;
+	}
+
+	nav > ul li ul li {
+  		display: block;
+		float: none;
+	}
+  
+	nav > ul li ul {
+		display: block;
+  		position: relative;
+  		width: 100%;
+		z-index: 9999;
+		float: none;
+	}
+
+}
+
+/* < 480px */
+@media screen and (max-width: 480px) { 
+
 }
 
