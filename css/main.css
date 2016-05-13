@@ -464,6 +464,15 @@ footer small {
 		line-height: 8rem;
 	}
 
+	nav ul li a {
+		margin: 0;
+	}
+
+	nav ul li a:hover, 
+	nav ul li a.active {
+		border-bottom: 1px solid #f63c3c;
+	}
+
 	li h1 ~ p {
 		font-size: 2rem;
 		line-height: 2.5rem;
@@ -472,7 +481,11 @@ footer small {
 	section article,
 	section article:nth-of-type(2) {
 		width: 90%;
-		margin: 5%;
+		margin: 10px 5%;
+	}
+
+	section article:nth-of-type(1) {
+		margin: 0 5%;
 	}
 
 	main section.showcase p {
@@ -535,8 +548,6 @@ footer small {
 		right: 20px;
 		left: 20px;
 		top: 70px;
-		-webkit-transition: all 0.3s ease-in-out 0s;
-    	transition: all 0.3s ease-in-out 0s;
 	}
 
 	nav a {
@@ -547,7 +558,7 @@ footer small {
 	    display: block;
   		float: none;
   		width: 100%;
-  		text-align: left;
+  		text-align: center;
   		background: #fff;
 	    text-indent: 20px;
 	}
@@ -570,9 +581,3 @@ footer small {
 	}
 
 }
-
-/* < 480px */
-@media screen and (max-width: 480px) { 
-
-}
-
